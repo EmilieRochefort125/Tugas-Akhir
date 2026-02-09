@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kerjakan Tes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Kerjakan Tes</h1>
+
+    <form method="POST">
+
+        {% for s in soal %}
+        <div class="soal-card">
+            <h3>Soal {{ loop.index }}</h3>
+            <p class="pertanyaan">{{ s.pertanyaan }}</p>
+
+            <label class="opsi">
+                <input type="radio" name="{{ s.id_soal }}" value="A" required>
+                {{ s.opsi_a }}
+            </label>
+
+            <label class="opsi">
+                <input type="radio" name="{{ s.id_soal }}" value="B">
+                {{ s.opsi_b }}
+            </label>
+
+            <label class="opsi">
+                <input type="radio" name="{{ s.id_soal }}" value="C">
+                {{ s.opsi_c }}
+            </label>
+
+            <label class="opsi">
+                <input type="radio" name="{{ s.id_soal }}" value="D">
+                {{ s.opsi_d }}
+            </label>
+        </div>
+        {% endfor %}
+
+        <div style="text-align:center; margin-top:25px;">
+            <button type="submit" class="btn btn-primary">
+                Selesai & Simpan Jawaban
+            </button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

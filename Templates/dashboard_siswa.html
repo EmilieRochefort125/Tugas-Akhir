@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Siswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Dashboard Psikotes</h1>
+
+    <div class="dashboard-grid">
+        {% for k in kategori %}
+        <div class="dashboard-card {% if k.sudah_dikerjakan %}done{% endif %}">
+            <h3>{{ k.nama_kategori }}</h3>
+            <p class="desc">{{ k.deskripsi }}</p>
+
+            {% if k.sudah_dikerjakan %}
+                <span class="badge success">Sudah dikerjakan</span>
+                <a href="/reset_tes/{{ k.id_kategori }}/" class="btn btn-secondary">
+                    Kerjakan Ulang
+                </a>
+            {% else %}
+                <span class="badge warning">Belum dikerjakan</span>
+                <a href="/tes/{{ k.id_kategori }}/" class="btn btn-primary">
+                    Mulai Tes
+                </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- TOMBOL HASIL -->
+    <div class="dashboard-footer">
+        <a href="/hasil/" class="btn btn-primary btn-hasil">
+            📊 Lihat Hasil Psikotes
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

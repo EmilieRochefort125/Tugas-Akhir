@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Psikotes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Hasil Psikotes</h2>
+
+    <div class="hasil-grid">
+        {% for h in hasil %}
+        <div class="hasil-card">
+            <h3>{{ h.nama_kategori }}</h3>
+
+            <div class="hasil-skor">
+                {{ h.skor }}
+            </div>
+
+            <p class="hasil-status">
+                {{ h.interpretasi }}
+            </p>
+
+            <p class="hasil-penjelasan">
+                {{ h.penjelasan }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="hasil-action">
+        <a href="/download_pdf" class="btn btn-primary">Download PDF</a>
+        <a href="/dashboard_siswa" class="btn btn-secondary">Kembali ke Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>
