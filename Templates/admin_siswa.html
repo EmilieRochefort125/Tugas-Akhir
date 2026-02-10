@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Siswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Data Siswa</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NIS</th>
+                <th>Nama</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for s in siswa %}
+            <tr>
+                <td>{{ s.nis }}</td>
+                <td>{{ s.nama }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

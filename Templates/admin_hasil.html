@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Semua Siswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Hasil Semua Siswa</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NIS</th>
+                <th>Nama</th>
+                <th>Kategori</th>
+                <th>Skor</th>
+                <th>Interpretasi</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for d in data %}
+            <tr>
+                <td>{{ d.nis }}</td>
+                <td>{{ d.nama }}</td>
+                <td>{{ d.nama_kategori }}</td>
+                <td>{{ d.skor }}</td>
+                <td>{{ d.interpretasi }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

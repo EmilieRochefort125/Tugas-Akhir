@@ -1,5 +1,5 @@
 /* =======================
-   GLOBAL
+   GLOBAL RESET
 ======================= */
 * {
     margin: 0;
@@ -36,6 +36,10 @@ h1, h2 {
     font-weight: 700;
 }
 
+h3 {
+    color: #2c3e50;
+}
+
 /* =======================
    BUTTON
 ======================= */
@@ -48,6 +52,7 @@ h1, h2 {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.25s ease;
+    border: none;
 }
 
 .btn-primary {
@@ -74,17 +79,23 @@ h1, h2 {
 ======================= */
 .login-wrapper {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .login-box {
-    width: 340px;
+    width: 360px;
     background: #fff;
     padding: 35px;
     border-radius: 20px;
     box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .login-box input {
@@ -93,7 +104,6 @@ h1, h2 {
     margin-bottom: 16px;
     border-radius: 10px;
     border: 1px solid #ccc;
-    transition: border-color 0.2s;
 }
 
 .login-box input:focus {
@@ -101,12 +111,16 @@ h1, h2 {
     border-color: #4f7cff;
 }
 
+.login-box button {
+    width: 100%;
+}
+
 /* =======================
    DASHBOARD
 ======================= */
 .dashboard-container {
     max-width: 1300px;
-    margin: 20px auto;
+    margin: 30px auto;
     background: #fff;
     padding: 35px 40px;
     border-radius: 24px;
@@ -139,20 +153,14 @@ h1, h2 {
     box-shadow: 0 16px 30px rgba(0,0,0,0.12);
 }
 
-.dashboard-card h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
-    color: #2c3e50;
-}
-
 .dashboard-card .desc {
     font-size: 13px;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 /* =======================
-   STATUS BADGE
+   BADGE STATUS
 ======================= */
 .badge {
     display: inline-block;
@@ -181,6 +189,12 @@ h1, h2 {
     padding: 22px;
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.pertanyaan {
+    font-weight: 600;
+    margin-bottom: 14px;
 }
 
 .opsi {
@@ -198,8 +212,12 @@ h1, h2 {
     border-color: #4f7cff;
 }
 
+.opsi input {
+    margin-right: 8px;
+}
+
 /* =======================
-   HASIL / TABLE
+   TABLE / HASIL
 ======================= */
 table {
     width: 100%;
@@ -226,63 +244,7 @@ th, td {
 }
 
 /* =======================
-   RESPONSIVE
-======================= */
-@media (max-width: 600px) {
-    .container,
-    .dashboard-container {
-        padding: 24px 20px;
-    }
-
-    .dashboard-title {
-        font-size: 22px;
-    }
-}
-
-body {
-    margin: 0;
-}
-
-.login-wrapper {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-box h2 {
-    text-align: center;
-    margin-bottom: 24px;
-    color: #2c3e50;
-}
-
-.login-box button {
-    width: 100%;
-}
-
-/* BUTTON SUBMIT */
-button.btn {
-    border: none;
-}
-
-/* SOAL */
-.soal-card h3 {
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-.pertanyaan {
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-/* OPSI RADIO */
-.opsi input {
-    margin-right: 8px;
-}
-/* =======================
-   HASIL PSIKOTES SIMPLE
+   HASIL GRID (CARD)
 ======================= */
 .hasil-grid {
     display: grid;
@@ -296,11 +258,6 @@ button.btn {
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     text-align: center;
-}
-
-.hasil-card h3 {
-    margin-bottom: 12px;
-    color: #2c3e50;
 }
 
 .hasil-skor {
@@ -333,4 +290,18 @@ button.btn {
 
 .hasil-action .btn {
     margin: 6px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 600px) {
+    .container,
+    .dashboard-container {
+        padding: 24px 20px;
+    }
+
+    .dashboard-title {
+        font-size: 22px;
+    }
 }
